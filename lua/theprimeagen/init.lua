@@ -1,5 +1,6 @@
 require("theprimeagen.set")
 require("theprimeagen.remap")
+require("theprimeagen.lazy")
 
 -- DO NOT INCLUDE THIS
 vim.opt.rtp:append("~/personal/streamer-tools")
@@ -26,7 +27,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = ThePrimeagenGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -35,3 +36,4 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+vim.api.nvim_command(':set splitbelow')

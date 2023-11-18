@@ -49,3 +49,5 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ':terminal', ':belowright split term://zsh', { noremap = true, silent = true })
